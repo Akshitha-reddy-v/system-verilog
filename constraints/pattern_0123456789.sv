@@ -6,7 +6,7 @@ module test;
     rand int da[];
     constraint da_size { da.size==10; }
     constraint pattern_gen { foreach(da[i])
-      							da[i]==i;
+      							              da[i]==i;
                            }
   endclass : pattern
   pattern p1;
@@ -14,9 +14,5 @@ module test;
     p1 = new;
     assert(p1.randomize());
     $display("%0p",p1.da);
-  end
-  initial begin
-    $dumpfile("dump.vcd");
-    $dumpvars;
   end
 endmodule
